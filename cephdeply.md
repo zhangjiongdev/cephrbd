@@ -1,5 +1,7 @@
 
-# Linux版本
+
 ```
 cat /etc/redhat-release
+# CentOS Linux release 7.7.1908 (Core)
 ```
+Linux版本:
