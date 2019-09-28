@@ -25,10 +25,9 @@ cat >> /etc/hosts << EOF
 EOF
 
 ```
-停防火墙
+停止并禁用防火墙
 ```
 systemctl stop firewalld && systemctl disable firewalld
-yum -y remove firewalld
 
 ```
 禁用UseDNS
