@@ -28,6 +28,7 @@ EOF
 停防火墙
 ```
 systemctl stop firewalld && systemctl disable firewalld
+yum -y remove firewalld
 
 ```
 禁用UseDNS
