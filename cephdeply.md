@@ -43,3 +43,46 @@ reboot
 
 ```
 
+yum 加速
+```
+curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+
+```
+```
+cat << EOM > /etc/yum.repos.d/ceph.repo
+[ceph]
+name=Ceph packages for x86_64
+baseurl=http://mirrors.aliyun.com/ceph/rpm-luminous/el7/x86_64/
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=https://mirrors.aliyun.com/ceph/keys/release.asc
+priority=1
+
+[ceph-noarch]
+name=Ceph noarch packages
+baseurl=http://mirrors.aliyun.com/ceph/rpm-luminous/el7/noarch
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=https://mirrors.aliyun.com/ceph/keys/release.asc
+priority=1
+
+[ceph-source]
+name=Ceph source packages
+baseurl=http://mirrors.aliyun.com/ceph/rpm-luminous/el7/SRPMS
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=https://mirrors.aliyun.com/ceph/keys/release.asc
+priority=1
+EOM
+
+```
+
+```
+yum clean all
+yum makecache fast
+
+```
