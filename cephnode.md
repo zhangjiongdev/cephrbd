@@ -95,6 +95,11 @@ systemctl enable chronyd && systemctl start chronyd
 chronyc sources
 
 ```
+```
+mkdir /root/.ssh
+chmod 700 /root/.ssh
+scp root@deploy:/root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+```
 
 
-
+systemctl restart ceph-mon.target

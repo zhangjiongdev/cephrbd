@@ -115,3 +115,35 @@ cd my-cluster
 ```
 
 # 配置 ceph1/ceph2/ceph3
+
+```
+ceph-deploy new ceph1
+
+ceph-deploy install ceph1 ceph2 ceph3
+```
+```
+#vi ceph.conf
+public network = 30.0.0.0/24
+mon clock drift allowed = 2
+mon clock drift warn backoff = 30
+```
+```
+ceph-deploy --overwrite-conf config push ceph1 ceph2 ceph3
+```
+```
+ceph-deploy mon create-initial
+ceph-deploy mon add ceph2
+ceph-deploy mon add ceph3
+
+ceph-deploy admin ceph1 ceph2 ceph3
+
+
+ceph-deploy mgr create ceph1
+ceph-deploy mgr create ceph2
+ceph-deploy mgr create ceph3
+
+
+ceph-deploy osd create --data /dev/sdb ceph1
+ceph-deploy osd create --data /dev/sdb ceph2
+ceph-deploy osd create --data /dev/sdb ceph3
+```
