@@ -97,9 +97,8 @@ systemctl enable chronyd && systemctl start chronyd
 chronyc sources
 ```
 ```
-yum install -y wget 
 
-wget https://bootstrap.pypa.io/get-pip.py
+curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
 sudo yum install yum-plugin-priorities -y
 sudo yum install ceph-deploy -y
