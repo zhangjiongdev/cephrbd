@@ -102,10 +102,15 @@ scp root@deploy:/root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
 ```
 
 
-systemctl restart ceph-mon.target
+
 
 
 ```
 ceph osd pool create rbd 128
 rbd pool init rbd
+```
+
+
+```
+// systemctl restart ceph-mon.target
 ```

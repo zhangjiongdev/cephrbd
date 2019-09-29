@@ -114,7 +114,10 @@ cd my-cluster
 
 ```
 
-# 配置 ceph1/ceph2/ceph3
+配置 ceph1/ceph2/ceph3
+```
+进入cephnode配置文档
+```
 
 ```
 ceph-deploy new ceph1
@@ -122,10 +125,12 @@ ceph-deploy new ceph1
 ceph-deploy install ceph1 ceph2 ceph3
 ```
 ```
-#vi ceph.conf
+cat << EOM >> ceph.conf
 public network = 30.0.0.0/24
 mon clock drift allowed = 2
 mon clock drift warn backoff = 30
+EOM
+
 ```
 ```
 ceph-deploy --overwrite-conf config push ceph1 ceph2 ceph3
