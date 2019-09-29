@@ -149,5 +149,3 @@ ceph-deploy osd create --data /dev/sdb ceph3
 ```
 
 
-ceph osd pool create rbd 128
-rbd pool init rbd
