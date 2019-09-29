@@ -1,4 +1,3 @@
-
 操作系统版本
 ```
 cat /etc/redhat-release
@@ -96,22 +95,6 @@ systemctl enable chronyd && systemctl start chronyd
 chronyc sources
 
 ```
-```
-curl -o get-pip.py https://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-sudo yum install yum-plugin-priorities -y
-sudo yum install ceph-deploy -y
-```
-生成密钥对
-```
-ssh-keygen -t rsa
 
-```
-创建临时工作目录
-```
-mkdir my-cluster
-cd my-cluster
 
-```
 
-# 配置 ceph1/ceph2/ceph3
