@@ -103,7 +103,10 @@ scp root@deploy:/root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
 
 
 
-
+配置cephdeploy
+```
+进入cephdeploy的配置步骤
+```
 
 ```
 ceph osd pool create rbd 128
