@@ -49,6 +49,8 @@ curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 
 ```
+
+
 ```
 cat << EOM > /etc/yum.repos.d/ceph.repo
 [ceph]
@@ -85,4 +87,20 @@ EOM
 yum clean all
 yum makecache fast
 
+```
+
+
+时间同步
+```
+yum install chrony -y
+systemctl enable chronyd && systemctl start chronyd
+chronyc sources
+```
+```
+yum install -y wget 
+
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+sudo yum install yum-plugin-priorities -y
+sudo yum install ceph-deploy -y
 ```
