@@ -101,3 +101,14 @@ python get-pip.py
 sudo yum install yum-plugin-priorities -y
 sudo yum install ceph-deploy -y
 ```
+生成密钥对
+```
+ssh-keygen -t rsa
+
+```
+创建临时工作目录
+```
+mkdir my-cluster
+cd my-cluster
+
+```
